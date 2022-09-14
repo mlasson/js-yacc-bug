@@ -1,0 +1,11 @@
+(ocamlyacc parser)
+(ocamllex lexer)
+
+(executable
+ (name main)
+ (modes js native)
+)
+
+(rule
+ (mode (promote (until-clean)))
+ (action (copy main.bc.js main.js)))
